@@ -1,1 +1,18 @@
 
+#[derive(Debug)]
+struct Details{
+    name:String,
+    age:u32,
+    pass:bool
+}
+fn main(){
+
+    let student:Details=Details{
+        name:"gsvsdev".to_owned(),
+        age:26,
+        pass:true,
+    };
+    println!("student details: {:?}",student);
+    println!("student name {},student age {},student pass{}",student.name,student.age,student.pass);
+
+}
