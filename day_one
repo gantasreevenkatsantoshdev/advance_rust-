@@ -16,3 +16,35 @@ fn main(){
     println!("student name {},student age {},student pass{}",student.name,student.age,student.pass);
 
 }
+
+#[derive(Debug)]
+struct Rectangle{
+    hight:u8,
+    width:u8,
+}
+
+fn area_rect(rect:Rectangle) -> u8{
+    rect.hight + rect.width*rect.width
+}
+fn change_length( rect_one:&mut Rectangle){
+    rect_one.hight=20;
+
+}
+fn main (){
+    let mut rect_one:Rectangle=Rectangle{
+        hight:7,
+        width:5
+    };
+
+    let rect_two:Rectangle=Rectangle{
+        hight:13,
+        width:10,
+    };
+    change_length(&mut rect_one);
+
+
+    let result_one:u8=area_rect(rect_one);
+    println!("result of area one {}",result_one);
+    let result_two:u8=area_rect(rect_two);
+    println!("result of area two {}",result_two);
+}
