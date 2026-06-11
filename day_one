@@ -125,3 +125,56 @@ fn main () {
    let result_three= rect_two.change_width();
     println!("result_three:{:?}", rect_two);
 }
+//////
+#[derive(Debug)]
+struct Square {
+    length: u16,
+}
+impl Square{
+    fn area(length: u16) -> Self{
+        Square{length,
+        }
+    }
+    fn area_square(&self)->u16{
+        self.length * self.length
+    }
+    fn change_area_square(&mut self){
+        self.length=22;
+    }
+}
+
+// struct Square {
+//     length: u8,
+// }
+//
+// impl Square {
+//     fn area(length: u8) -> Self {
+//         Square { length }
+//     }
+//
+//     fn area_square(&self) -> u16 {
+//         self.length as u16 * self.length as u16
+//     }
+//
+//     fn change_area_square(&mut self) {
+//         self.length = 22;
+//     }
+// }
+
+// fn main(){
+//     let  Square:Square=  Square::area(10);
+//     println!("area_square={:?}",square.area_square());
+//
+//     let square:Square= &mut Square.change_area_square();
+//         println!("result_three:{:?}",change_area_square );
+// }
+
+fn main() {
+    let mut square = Square::area(10);
+
+    println!("Before = {}", square.area_square());
+
+    square.change_area_square();
+
+    println!("After = {}", square.area_square());
+}
