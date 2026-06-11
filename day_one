@@ -48,3 +48,41 @@ fn main (){
     let result_two:u8=area_rect(rect_two);
     println!("result of area two {}",result_two);
 }
+
+///////////////////
+#[derive(Debug)]
+struct Rectangle{
+    hight:u16,
+    width:u16,
+}
+//associative function
+impl Rectangle{
+    fn area (new_hight:u16, new_width:u16) -> Self{
+        Self{
+            hight:new_hight,
+            width:new_width,
+        }
+    }
+    //methods
+    fn area_rect(&self) -> u16{
+        self.hight + self.width
+    }
+}
+// fn area_rect(rect:Rectangle) -> u8{
+//     rect.hight + rect.width*rect.width
+//}
+//
+
+//}
+fn main () {
+    let rect_one: Rectangle = Rectangle::area(200, 200);
+    println!("rect_one:{:?}", rect_one);
+    let rect_two: Rectangle = Rectangle::area(222, 200);
+    println!("rect_two:{:?}", rect_two);
+
+   let result_one= rect_one.area_rect();
+    println!("result_on:{:?}", result_one);
+
+    let result_two= rect_two.area_rect();
+    println!("result_on:{:?}", result_two);
+}
