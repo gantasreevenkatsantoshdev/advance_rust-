@@ -130,3 +130,16 @@ fn main() {
     let result= devide(10,5);
     println!("{:?}",result);
 }
+////
+use std::fmt::Display;
+fn main() {
+    let x:i32 = 10;
+    let y:bool = false;
+    let z:String = "hello".to_string();
+    println!("{}", x);
+    println!("{}",y);
+    println!("{}",z);
+}
+fn print_data<T:Display>(data:T){
+    println!("{}", data);
+}
