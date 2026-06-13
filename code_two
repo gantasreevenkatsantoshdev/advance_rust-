@@ -1,1 +1,14 @@
 
+enum Color {
+    REd,
+    Yellow,
+    Blue,
+}
+fn main (){
+    let color:Color=Color::REd;
+    match color {
+        Color::REd => println!("Red"),
+        Color::Yellow => println!("yellow"),
+        Color::Blue => println!("blue"),
+    }
+}
