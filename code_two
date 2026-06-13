@@ -117,3 +117,16 @@ fn get_user_phone_number(user_id:i32)-> Option<i32>{
         return None;
     }
 }
+/////
+
+fn devide(x:i32, y:i32)->Result<i32,String>{
+    if x==0{
+        return Err("y is zero".to_string());
+    }else {
+        return Ok(x/y);
+    }
+}
+fn main() {
+    let result= devide(10,5);
+    println!("{:?}",result);
+}
