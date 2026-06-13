@@ -42,3 +42,34 @@ fn main(){
     println!("new_Shape_three:{:?}",Triangle);
     
 }
+////////
+
+#[derive(Debug)]
+enum Shapes{
+    Rectangle(f64,f64),
+    Circle(f64),
+}
+const PI:f64= 3.14159265358979323846264338327950288;
+impl Shapes {
+    fn new_shape(len: f64, bre: f64) -> Self {
+        Self::Rectangle(len, bre)
+    }
+    fn new_shape_two(radius: f64) -> Self {
+        Self::Circle(radius)
+    }
+    fn area(&self) {
+        match self {
+            Shapes::Rectangle(len, bre) => println!("area of Rectangle:{}", len * bre),
+            Shapes::Circle(radius) => println!("area of rectangle is : {}",PI * radius * radius),
+        }
+    }
+}
+
+fn main() {
+        let rectangles: Shapes = Shapes::new_shape(10.0, 5.0);
+        let circles = Shapes::new_shape_two(6.9);
+
+        circles.area();
+        rectangles.area();
+
+    }
