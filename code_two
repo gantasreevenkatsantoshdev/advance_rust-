@@ -93,3 +93,27 @@ fn get_user_phone_number(user_id:i32)-> Option<i32>{
         return None;
     }
 }
+
+///////
+fn main(){
+    let user_id_1:i32= 1;
+    let user_id_2:i32=2;
+
+
+    match get_user_phone_number(user_id_1,) {
+        Some(user_phone_number) => println!("user_phone_number = {}",user_phone_number),
+        None => println!("user_phone_number is None")
+    }
+    // let value_1= get_user_phone_number(user_id_1,);
+    // let value_2= get_user_phone_number(user_id_2,);
+    // println!("value 1 : {:?}",value_1);
+    // println!("value 2: {:?}",value_2);
+}
+fn get_user_phone_number(user_id:i32)-> Option<i32>{
+    let mob_num:i32=99999999;
+    if user_id == 1{
+        return Some(mob_num);
+    }else{
+        return None;
+    }
+}
