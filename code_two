@@ -12,3 +12,33 @@ fn main (){
         Color::Blue => println!("blue"),
     }
 }
+//////
+use crate::Shapes::{Rectangle, Square, Triangle};
+#[derive(Debug)]
+enum Shapes{
+    Rectangle,
+    Square,
+    Triangle,
+}
+impl Shapes{
+    fn new_Shape()->Self{
+        Self::Rectangle
+    }
+    fn new_Shape_two()->Self{
+        Self::Square
+    }
+    fn New_Shape_three()->Self{
+        Self::Triangle
+    }
+}
+fn main(){
+    let Shapes:Shapes=Shapes::new_Shape();
+    println!("new_Shapes:{:?}",Rectangle);
+
+    let Shapes=Shapes::new_Shape_two();
+    println!("new_Shape_two:{:?}",Square);
+
+    let Shapes=Shapes::New_Shape_three();
+    println!("new_Shape_three:{:?}",Triangle);
+    
+}
