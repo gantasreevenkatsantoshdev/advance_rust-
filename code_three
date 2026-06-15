@@ -19,3 +19,45 @@ fn main(){
     circle.area_circle();
     print!("area of circle : {:?}",circle)
 }
+//////////////////////////////////
+trait Course{
+    fn get_overview(&self)->String;
+}
+struct Workshop{
+    title:String,
+    instructors:String,
+    duration:String,
+}
+struct Seminar{
+    title:String,
+    speaker:String,
+    location:String,
+}
+impl Course for Workshop{
+    fn get_overview(&self)-> String{
+        format!(
+            "workshop title:{} workshop instructor:{} workshop duration:{}",self.title, self.instructors, self.duration
+        )
+    }
+}
+impl Course for Seminar {
+    fn get_overview(&self) -> String {
+        format!(
+            "seminar title:{} seminar speaker:{} seminar location:{}",
+            self.title,
+            self.speaker,
+            self.location
+        )
+    }
+}
+fn print_course_overview<T:Course>(courses: T){
+    println!("{}", courses.get_overview());
+}
+
+fn main() {
+    let workshop: Workshop = Workshop { title: "Everything".to_owned(), instructors: "gsvsdev".to_owned(), duration: "10 hours".to_owned() };
+    let seminar: Seminar = Seminar { title: "workshop".to_owned(), speaker: "gsvsdevs".to_owned(), location: "Bhanjnagar".to_owned() };
+
+    print_course_overview(workshop);
+    print_course_overview(seminar);
+}
