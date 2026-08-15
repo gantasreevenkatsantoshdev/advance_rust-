@@ -82,3 +82,17 @@ fn print_data<T: Display>(data:T){
     println!("data: {}", data);
 }
 }
+//////
+use std::fmt::Display;
+fn main() {
+    let x:i32= 10;
+    let y=true;
+    let z= "hello".to_owned();
+     println!("data: {}",  print_data(x));
+    println!("data: {}",  print_data(y));
+    println!("data: {}",  print_data(z));
+}
+fn print_data<T: Display>(data:T) ->T {
+    data
+}
+
