@@ -96,3 +96,22 @@ fn print_data<T: Display>(data:T) ->T {
     data
 }
 
+////////
+struct Circle {
+    radius: f64,
+}
+trait Shape {
+    fn area_circle(&self) -> f64;
+}
+impl Shape for Circle {
+    fn area_circle(&self) -> f64 {
+        3.14 * (self.radius * self.radius)
+    }
+}
+fn main() {
+    let c = Circle { radius: 3.0 };
+    c.area_circle();
+    println!("area_circle = {}", c.area_circle());
+}
+
+//////
