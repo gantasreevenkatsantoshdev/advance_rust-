@@ -1,0 +1,31 @@
+
+#[derive(Debug)]
+enum Color{
+    Red(f64),
+    Green(f64,f64),
+}
+const PI:f64 = 3.14;
+impl Color {
+    fn new_color(radius:f64)->Self{
+        Self::Red(radius)
+    }
+    fn second_color(len:f64,bre:f64)->Self{
+        Self::Green(len,bre)
+    }
+    fn area(&self)->f64{
+        match self{
+            Color::Red(radius)=>PI*radius*radius,
+            Color::Green(len,bre) =>len*bre,
+
+        }
+    }
+}
+fn main() {
+    let color=Color::new_color(5.0);
+    let second_color = Color::second_color(2.0,2.0);
+    println!("Red: {:?}", color);
+        println!("Red area: {}", color.area());
+
+        println!("Green: {:?}", second_color);
+        println!("Green area: {}", second_color.area());
+}
