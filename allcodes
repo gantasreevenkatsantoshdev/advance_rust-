@@ -29,3 +29,27 @@ fn main() {
         println!("Green: {:?}", second_color);
         println!("Green area: {}", second_color.area());
 }
+//////////////////////
+    let user_id_1 = 1;
+    let user_id_2 = 2;
+
+    // let value= get_user_phone_numbers(user_id_1);
+    // println!("{:?}", value);
+    //
+    // let value: Option<i32> =get_user_phone_numbers(user_id_2);
+    // println!("{:?}", value);
+    match get_user_phone_numbers(user_id_1) {
+        Some(data)=>println!("{:?}", data),
+        None=>println!("No phone numbers found"),
+    }
+}
+ fn get_user_phone_numbers(user_id:i32)->Option<i32>{
+//     fn get_user_phone_numbers(user_id: i32) ->i32{
+    let phone_numbers:i32=16143;
+    if user_id==2 {
+        Some(phone_numbers)
+    }else {
+        None
+
+    }
+}
