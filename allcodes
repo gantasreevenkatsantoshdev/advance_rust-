@@ -115,3 +115,55 @@ fn main() {
 }
 
 //////
+
+use std::time::Duration;
+
+trait Course{
+    fn get_overview(&self) -> String;
+}
+struct Workshop {
+    title: String,
+    instructor: String,
+    duration: Duration
+}
+struct Seminar{
+    title: String,
+    speaker: String,
+    location: String,
+
+}
+
+impl Course for Workshop {
+    fn get_overview(&self) -> String{
+        format!(
+            "Workshop title:{} Workshop instructor:{} Workshop duration:{:?}",
+            self.title,self.instructor,self.duration
+        )
+    }
+}
+impl Course for Seminar {
+    fn get_overview(&self) -> String{
+        format!(
+            "Seminar title:{} Seminar speaker:{} Seminar duration:{}",
+            self.title,self.speaker,self.location
+        )
+    }
+}
+fn print_cource_overview<T:Course>(Course: T ){
+    println!("{}", Course.get_overview());
+}
+fn main() {
+    let Workshop = Workshop {
+        title: "Blockchain".to_owned(),
+        instructor: "gsvsdev".to_owned(),
+        duration: Duration::from_secs(10 * 60 * 60)
+    };
+
+    let Seminar = Seminar {
+        title: "Blockchain".to_owned(),
+        speaker: "gnrao".to_owned(),
+        location: "Bhanjanagar".to_owned()
+    };
+    print_cource_overview(Workshop);
+    print_cource_overview(Seminar);
+}
