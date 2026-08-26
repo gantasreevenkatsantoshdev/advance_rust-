@@ -167,3 +167,27 @@ fn main() {
     print_cource_overview(Workshop);
     print_cource_overview(Seminar);
 }
+/////////
+
+trait Greet{
+    fn greet(&self){
+        println!("Greet");
+    }
+}
+struct Person;
+
+impl Greet for Person{}
+
+struct Student;
+impl Greet for Student{
+    fn greet(&self){
+        println!("Greet two");
+    }
+}
+
+fn main() {
+    let person = Person;
+    person.greet();
+    let student = Student;
+    student.greet();
+}
