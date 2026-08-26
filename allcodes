@@ -191,3 +191,12 @@ fn main() {
     let student = Student;
     student.greet();
 }
+////////
+fn main() {
+    let a1:[i64;5]=[10,20,30,40,50];
+    println!("a1: {:?}",a1);
+
+    let mut a2:[i64;5]=[10,20,30,40,50];
+    a2[0]=20;
+    println!("a2: {:?}",a2);
+}
