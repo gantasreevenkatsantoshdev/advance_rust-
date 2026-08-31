@@ -200,3 +200,36 @@ fn main() {
     a2[0]=20;
     println!("a2: {:?}",a2);
 }
+//////////////////////////
+
+// fn main() {
+//     let vec = vec![1, 2, 3,4,5];
+//     let vec2:Vec<i32> =vec.into_iter().filter(|x| x % 2 != 0).collect();
+//     println!("{:?}", vec2);
+//     let vec3:Vec<i32>= vec2.into_iter().map(|x| {x+ 1}).collect();
+//     println!("{:?}", vec3);
+//     let Vec4:Option<i32>= vec3.into_iter().find(|x| *x==6);
+//     println!("{:?}", Vec4);
+// }
+fn main(){
+    let Vec = vec![1,2,3,4,5];
+    let Result = Vec
+        .iter()
+        .filter(|x| **x % 2 != 0)
+        .map(|x|*x + 1)
+        .find(|x| *x == 6);
+    println!("{:?}", Result);
+}
+
+
+// fn main() {
+//     let vec = vec![1, 2, 3, 4, 5];
+//
+//     let result = vec
+//         .iter()
+//         .filter(|x| **x % 2 != 0)
+//         .map(|x| *x + 1)
+//         .find(|x| *x == 6);
+//
+//     println!("{:?}", result);
+// }
